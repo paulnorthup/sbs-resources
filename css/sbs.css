@@ -1,0 +1,2692 @@
+/*  ----------------------------------------------------------
+	L A Y O U T
+-------------------------------------------------------------- */
+/* Core type & display */
+body {
+	background: #efefef;
+	color: #484848;
+	font: 10px/1.5 "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	margin: 0;
+	padding: 0 0 40px 0;
+}
+h1, h2, h3, h4 { margin-bottom: .5em; }
+h1 {
+	font-size: 26px;
+	letter-spacing: -1px;
+}
+h2 { font-size: 21px; }
+h3 {
+	font-size: 18px;
+	letter-spacing: -1px;
+}
+h4 {
+	font-size: 16px;
+}
+.aside h2 em, .aside h3 em {
+	color: #aaa;
+	font-size: .8em;
+	font-style: normal;
+	padding-left: 2px;
+}
+p, dl, ul, ol { margin-bottom: 1em; }
+p, dt, dd, li { font-size: 12px; }
+
+a {
+	color: #2d6cbe;
+	cursor: pointer;
+	text-decoration: none;
+}
+a:hover { color: #1d4483; }
+
+.btn {
+	background: #ca1e1e url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/btn-glass.png) 0 center repeat-x;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0;
+	line-height: 1.5;
+	margin: 0;
+	padding: 4px 10px 5px 10px;
+	text-shadow: rgba(0,0,0,.12) 0 1px 0;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-box-shadow: rgba(0,0,0,.12) 0 1px 1px;
+	-webkit-box-shadow: rgba(0,0,0,.12) 0 1px 1px;
+}
+.btn:hover {
+	background-color: #b01a1a;
+	color: #fff;
+}
+.btn:active {
+	position: relative;
+	top: 1px;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.btn.alt {
+	background: #DDD;
+	color: #888;
+	border-color: #CCC;
+}
+.btn.alt:hover {
+	background: #CCC;
+	color: #777;
+	border-color: #CCC;
+}
+input.btn {
+	border: none;
+	padding: 6px 10px 7px 10px;
+}
+.btn.large-btn { font-size: 15px; }
+.btn.disabled, .btn.disabled:active {
+	background-color: #ccc;
+	cursor: default;
+	top: 0;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+li, dd { margin-left: 1.5em; }
+pre {
+	font-size: 11px;
+	line-height: 14px;
+	margin: 0 0 2em 0;
+}
+@-moz-document url-prefix() {
+	pre { letter-spacing: .0375em; }
+}
+
+/* Common text styles */
+.tag, .alert {
+	display: inline-block;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.tag {
+	background: #eee;
+	color: #aaa;
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0 3px;
+	padding: 1px 4px;
+	text-transform: uppercase;
+}
+h1 .tag, h2 .tag {
+	font-size: .6em;
+	position: relative;
+	top: -.1em;
+}
+.alert {
+	background: #ffffdd;
+	border: 1px solid rgba(0,0,0,.12);
+	line-height: 1.2;
+	padding: .4em 6px;
+}
+.fine-print {
+	color: #aaa;
+	font-size: 10px;
+}
+.empty-state {
+	background: #eee;
+	color: #888;
+	text-shadow: #fff 0 1px 0;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: rgba(0,0,0,.19) 1px 1px 0;
+	-webkit-box-shadow: rgba(0,0,0,.19) 1px 1px 0;
+	box-shadow: rgba(0,0,0,.19) 1px 1px 0;
+}
+.mod.empty-state {
+	padding: 12px 15px 1px 15px;
+	margin: 0 30px 30px 30px;
+}
+.mod p.empty-state { padding: 12px 15px; }
+.empty-state strong { color: #555; }
+.shim {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/listing-divider.png) 0 0 repeat-x;
+	height: 4px;
+	margin: 2em 30px 3em 30px;
+}
+
+/* Basic key/val list */
+dl.basic dt {
+	clear: left;
+	color: #aaa;
+	float: left;
+	font-size: 11px;
+	padding-bottom: 3px;
+	width: 25%;
+}
+dl.basic dd {
+	float: left;
+	font-size: 11px;
+	margin-left: 0;
+	padding-left: 1%;
+	padding-bottom: 3px;
+	width: 74%;
+}
+.aside dl.basic dt {
+	float: none;
+	padding-bottom: 0;
+	width: auto;
+}
+.aside dl.basic dd, dl.basic dd.full {
+	float: none;
+	padding-left: 0;
+	margin-bottom: .25em;
+	width: auto;
+}
+dl.basic dd.full { margin: 0; }
+dl.basic .alert {
+	padding: .1em 4px;
+	position: relative;
+}
+dl.basic .tag { padding: .5px 4px; }
+dl.basic .standings-link { padding: 0 3px; }
+dl.basic .standings-link a { padding: 0 2px; }
+
+/* Tabs */
+.simple-tabs {
+	border-bottom: 1px solid #ddd;
+	padding: 0 0 .5em 0;
+	margin: 0 30px 1em 30px;
+}
+.simple-tabs {
+	margin-top: .6em;
+	margin-bottom: 2em;
+	padding-bottom: 0;
+}
+.simple-tabs li {
+	float: left;
+	list-style: none;
+	margin: 0 3px 0 0;
+}
+.simple-tabs li.right {
+	float: right;
+	margin: 0 0 0 3px;
+}
+.simple-tabs a {
+	background: #f2f2f2;
+	border: 1px solid #eee;
+	display: block;
+	font-size: 13px;
+	font-weight: normal;
+	padding: 5px 16px 4px 16px;
+	position: relative;
+	top: .35em;
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	border-radius: 4px 4px 0 0;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.simple-tabs a { top: .4em; }
+}
+.simple-tabs a .tag {
+	background: #e2e2e2;
+	color: #999;
+	margin: 0 0 0 3px;
+	position: relative;
+	top: -.125em;
+}
+.simple-tabs li.current a {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	color: #484848;
+	cursor: default;
+	font-size: 16px;
+	padding: 5px 20px;
+	top: 1px;
+}
+.simple-tabs li.current a .tag {
+	background: #eee;
+	color: #484848;
+	top: -.25em;
+}
+.simple-tabs a em {
+	background: #2d6cbe;
+	color: #fff;
+	display: inline-block;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 1.1;
+	padding: 2px 4px;
+	position: relative;
+	top: -1px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.simple-tabs a:hover em { background: #1d4483; }
+.simple-tabs li.current a em, .simple-tabs li.current a:hover em { background: #484848; }
+
+/* Pagination */
+.pagination li {
+	float: left;
+	list-style: none;
+	margin: 0 4px 0 0;
+}
+.pagination li a, .pagination li.current a {
+	background: #f2f2f2;
+	border: 1px solid #e2e2e2;
+	display: block;
+	font-size: 10px;
+	font-weight: bold;
+	line-height: 10px;
+	padding: 7px 8px 8px 8px;
+	text-transform: uppercase;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.pagination li.current a {
+	background: #2d6cbe;
+	border: 1px solid #2d6cbe;
+	color: #fff;
+	-moz-box-shadow: rgba(0,0,0,.12) 0 1px 1px;
+	-webkit-box-shadow: rgba(0,0,0,.12) 0 1px 1px;
+	box-shadow: rgba(0,0,0,.12) 0 1px 1px;
+}
+.pagination li a:hover {}
+.pagination li a span { display: none; }
+.pagination li.disabled a {
+	background: transparent;
+	border-color: #f0f0f0;
+	color: #d2d2d2;
+	cursor: default;
+}
+.pagination li.pager-qty {
+	color: #aaa;
+	font-size: 10px;
+	padding-left: 8px;
+}
+
+/* Sub Tabs */
+.sub-tabs {
+	background-image: url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/sub-tabs-gradient.png);
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	border: 1px solid #e2e2e2;
+	border-top: none;
+	padding: 10px 20px;
+	margin: -2em 30px 2.5em 30px;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+.sub-tabs li {
+	float: left;
+	list-style: none;
+	margin: 0 10px 0 0;
+}
+
+/* Payment Chart(s) */
+dt.chart, dd.chart { margin-top: .5em; }
+dd.chart { padding-top: .25em; }
+.chart-gutter {
+	display: block;
+	margin-bottom: 2px;
+	position: relative;
+	width: 100%;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+}
+.chart-index {
+	left: 0;
+	position: absolute;
+	top: 0;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+}
+.chart-key {
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	width: 10px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 16px;
+	border-radius: 16px;
+}
+.chart-index, .chart-count .chart-key {
+	background: #aaa;
+	height: 10px;
+}
+.chart-gutter, .chart-total .chart-key {
+	background: #eee;
+	height: 10px;
+}
+.chart-total .chart-key {
+	border: 1px solid #ddd;
+	height: 8px;
+	width: 8px;
+}
+.chart-count { margin-right: 15px; }
+
+/* Structural framework */
+.wrap {
+	background: #fff;
+	margin: 0 auto;
+	padding: 0 30px;
+	width: 920px;
+}
+
+/* Header */
+#header {
+  background-color: #48A9E4;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0779BF), to(#48A9E4));
+  background-image: -moz-linear-gradient(-90deg, #0779BF, #48A9E4);
+}
+#header .wrap {
+  background: none;
+}
+.header-wrap {}
+#logo {
+	float: left;
+	margin: 20px 0;
+}
+#logo h1 {
+	font-size: 39px;
+	font-weight: normal;
+	line-height: 1.1;
+	margin: 0;
+	padding: 0;
+}
+#logo h1 a { color: rgba(255,255,255,.93); }
+
+/* Account nav */
+#account-nav {
+	position: absolute;
+	float: right;
+	right: 20px;
+	top: 4px;
+}
+#account-nav p {
+	color: rgba(255,255,255,.6);
+	font-size: 10px;
+	font-weight: bold;
+	list-style: none;
+}
+#account-nav a {
+	color: rgba(255,255,255,.6);
+	margin: 0 3px;
+}
+#account-nav a:hover { color: rgba(255,255,255,.93); }
+#account-nav a.user { margin-left: 0; }
+
+/* Main nav */
+#nav { background: #212121; }
+#nav .wrap { background: #212121; }
+.nav-wrap {}
+#nav ul { margin: 0; }
+#nav li {
+	float: left;
+	font-size: 11px;
+	font-weight: bold;
+	list-style: none;
+	margin: 0 25px 0 0;
+}
+#nav li a {
+	color: rgba(255,255,255,.7);
+	display: block;
+	padding: 20px 0;
+	text-transform: uppercase;
+}
+#nav li a:hover { color: rgba(255,255,255,.93); }
+#nav li.has-sub { position: relative; }
+.sub-nav {
+	background: rgba(21,21,21,.93);
+	display: none;
+	font-size: 11px;
+	font-weight: normal;
+	left: -10px;
+	padding-bottom: 7px;
+	position: absolute;
+	top: 100%;
+	width: 175px;
+	z-index: 900;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+.sub-nav dt {
+	background: rgba(255,255,255,.7);
+	font-size: 11px;
+	font-weight: bold;
+	margin: 8px 0 4px 0;
+	padding: 2px 10px;
+}
+.sub-nav dt:first-child { margin-top: 0; }
+.sub-nav dt.no-title {
+	background: transparent;
+	height: 6px;
+	padding: 0;
+	margin: 0;
+}
+.sub-nav dd {
+	font-size: 11px;
+	margin: 0;
+}
+#nav li .sub-nav dd a {
+	display: block;
+	padding: 1px 12px;
+}
+#nav li .sub-nav a { text-transform: none; }
+
+/* Aside nav */
+.aside-nav ul {
+	margin: 0 0 0 -25px;
+	padding-top: .9em;
+}
+.aside-nav li {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/bevel.png) 0 bottom repeat-x;
+	list-style: none;
+	margin: 0;
+	padding-bottom: 3px;
+}
+.aside-nav li a {
+	display: block;
+	padding: 6px 8px 6px 25px;
+	-moz-border-radius: 0 2px 2px 0;
+	-webkit-border-radius: 0 2px 2px 0;
+	border-radius: 0 2px 2px 0;
+}
+.aside-nav li a:hover { background: rgba(0,0,0,.05); }
+.aside-nav li.current a, .aside-nav li.current a:hover {
+	background: none repeat scroll 0 0 #fff;
+	border-color: rgba(0, 0, 0, 0.07);
+	border-style: solid;
+	border-width: 1px 1px 0 0;
+	color: #484848;
+	cursor: default;
+	font-weight: bold;
+	left: -1px;
+	margin: -2px -2px -1px 0;
+	position: relative;
+}
+.aside-nav li.current.has-sub a { border-bottom: 1px solid #e2e2e2; }
+.aside-nav li.current.has-sub li a { border-bottom: none; }
+.aside-nav li:first-child.current a, .aside-nav li:first-child.current a:hover { margin-top: 0; }
+.aside-nav li a .current-marker { display: none; }
+.aside-nav ul ul {
+	margin: 0 0 4px 0;
+	padding: 1px 0 0 0;
+}
+.aside-nav ul ul li {
+	background: transparent;
+	font-size: 90%;
+	margin-bottom: 1px;
+	padding: 0;
+}
+.aside-nav ul ul li a, .aside-nav li.current ul li a {
+	background: transparent;
+	font-weight: normal;
+	padding: 2px 8px 2px 37px;
+}
+.aside-nav ul ul li a:hover, .aside-nav li.current ul li a:hover {
+	background: rgba(0,0,0,.05);
+	font-weight: normal;
+	cursor: pointer;
+}
+.aside-nav li.current ul li a, .aside-nav li.current ul li a:hover {
+	border: none;
+	padding: 2px 8px 2px 37px;
+	margin: 0 0 0 1px;
+}
+.aside-nav ul ul li.current:last-child { margin-bottom: -5px; }
+.aside-nav a .tag {
+	background: #2d6cbe;
+	color: #eee;
+	position: relative;
+	top: -1px;
+}
+.aside-nav .current a .tag { background: #484848; }
+
+/* Content & module framework */
+#content { background: #efefef}
+#content .wrap {
+	background: #fff;
+	padding: 0;
+	width: 980px;
+}
+.content-wrap {}
+#page-title {
+	border-bottom: 1px solid #ddd;
+	line-height: 1.1;
+	padding-bottom: .5em;
+	margin: 0 30px 1em 30px;
+}
+#page-title.signup {
+	border-bottom: 1px solid #ddd;
+	line-height: 1.1;
+	padding-bottom: 1em;
+	margin: 15px 30px .75em 30px;
+}
+em.context {
+	color: #aaa;
+	display: block;
+	font-size: 11px;
+	font-style: italic;
+	font-weight: normal;
+}
+#page-title em.context {
+	font-size: .525em;
+	letter-spacing: 0;
+	padding-top: .25em;
+}
+#page-title em.context a { color: #aaa; }
+#page-title em.context a:hover { color: #484848; }
+#page-title a.btn {
+	float: right;
+	font-size: 14px;
+	margin-left: 10px;
+	padding: 6px 11px 7px 11px;
+}
+#page-title.with-tabs {
+	border: none;
+	margin-bottom: .8em;
+	padding-bottom: 0;
+}
+#page-title img {
+	float: left;
+	margin-right: 10px;
+}
+img#profile-photo { max-height: 150px; }
+
+.main, .aside { padding: 20px 0 0 0; }
+.main {
+	float: left;
+	width: 710px;
+}
+.aside {
+	background: #f6f6f6;
+	border-color: rgba(0,0,0,.07);
+	border-style: solid;
+	width: 249px;
+}
+.mod {
+	padding: 0 30px;
+	margin-bottom: 30px;
+}
+.aside .mod { padding: 0 25px; }
+.aside .mod h3 { line-height: 20px; }
+.aside .mod h4 { line-height: 18px; }
+.overlay .mod { padding: 0; }
+.overlay .mod.entity-listing { margin-bottom: 1em; }
+/* Full */
+#content.full .main {
+	float: none;
+	width: auto;
+}
+#content.full .aside { display: none; }
+/* Left column */
+#content.left-col .main { padding-right: 20px; }
+#content.left-col .aside {
+	border-width: 0 1px 0 0;
+	float: left;
+}
+/* Right column */
+#content.right-col .main {
+	float: left;
+	padding-right: 20px;
+}
+#content.right-col .aside {
+	float: right;
+	border-width: 0 0 0 1px;
+}
+/* Overlay structure */
+#cOverlay-shade {
+	background: rgba(0,0,0,.25);
+	color: #fff;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 900;
+}
+.cOverlay-wrap {
+	background: rgba(0,0,0, .5);
+	display: none;
+	padding: 10px;
+	position: absolute;
+	width: 620px;
+	z-index: 901;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: rgba(0,0,0,.34) 0 1px 3px;
+	-webkit-box-shadow: rgba(0,0,0,.34) 0 1px 3px;
+}
+.mod.overlay, .narrow .mod.overlay {
+	background: #fff;
+	display: none;
+	margin: 0;
+	max-height: 570px;
+	overflow: auto;
+	padding: 20px;
+	-moz-box-shadow: rgba(0,0,0,.42) 0 0 1px;
+	-webkit-box-shadow: rgba(0,0,0,.42) 0 0 1px;
+}
+.cOverlay-wrap p.form-btns { padding-top: 1em; }
+/* Expiration Warning Overlay */
+.ui-widget-overlay {
+	background: rgba(0,0,0,.25);
+	color: #fff;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 900;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+.ui-dialog-titlebar{display: none;}
+
+.overlay-btn {
+	background: #2d6cbe url( http://svite-league-apps-static.s3.amazonaws.com/_i/themes/btn-bg.png) 0 -12px repeat-x;
+	border: 1px solid #1d4483;
+	color: #eee;
+	cursor: pointer;
+	display: inline-block;
+	font: normal bold 12px/13px Helvetica, Arial, sans-serif !important;
+	margin: 0 1px 2px 1px;
+	padding: 8px 12px 6px 12px;
+	position: static;
+	text-shadow: rgba(0,0,0,.3) -1px -1px 0;
+	text-transform: uppercase;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-box-shadow: rgba(0,0,0,.34) 0 1px 1px;
+	-webkit-box-shadow: rgba(0,0,0,.34) 0 1px 1px;
+	width: 128px;
+}
+
+.overlay-btn:hover {
+	background-color: #1d4483;
+	color: #fff;
+	text-decoration: none;
+}
+/* Footer */
+#footer { background: #efefef}
+#footer .wrap {
+  background: #e3e3e3;
+	border-top: 1px solid #c2c2c2;
+	padding: 0;
+	width: 980px;
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	border-radius: 0 0 4px 4px;
+}
+.footer-wrap {
+	border-top: 1px solid #d2d2d2;
+	padding: 15px 30px 7px 30px;
+}
+#footer p {
+	color: #999;
+	font-size: 11px;
+}
+#footer p a { color: #626262; }
+#footer p a:hover { color: #424242; }
+
+
+/*  ----------------------------------------------------------
+	F O R M S
+-------------------------------------------------------------- */
+/* Basic element styles */
+input[type=text], input[type=password], textarea, select {
+	border: 1px solid #ccc;
+	color: #484848;
+	font: 12px/1 "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+	margin: 0;
+	padding: 5px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus {
+	border-color: #99aace;
+	-moz-box-shadow: #99aace 0 0 3px;
+	-webkit-box-shadow: #99aace 0 0 3px;
+}
+textarea {
+	display: block;
+	height: 10.5em;
+	line-height: 1.5;
+}
+textarea.sml { height: 4.5em; }
+select {
+	background: #fff;
+	padding: 4px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select {
+		background: #fff url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/wk-select-arrow.png) right center no-repeat;
+		padding: 6px 39px 7px 6px;
+		-khtml-appearance: none;
+	}
+}
+optgroup, optgroup:focus {
+	border-top: 1px solid #ddd;
+	color: #888;
+	display: block;
+	font-style: normal;
+	margin: 5px 0;
+	padding: 5px 0;
+}
+optgroup option {
+	color: #484848;
+	padding: 0 0 0 15px;
+}
+input[type=checkbox], input[type=radio] {
+	margin-right: 2px;
+	margin-left: 0;
+}
+
+/* Core form structures */
+.basic-form fieldset { padding-top: 2em; }
+.basic-form fieldset:first-child { padding-top: 0; }
+.basic-form fieldset h3 {
+	border-bottom: 1px solid #eee;
+	margin: 0 0 1em 0;
+	padding-bottom: .25em;
+}
+.basic-form li{
+	background: #eee;
+	list-style: none;
+	margin: 0 0 .75em 0;
+	padding: 3px 0 3px 2px;
+	position: relative;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.basic-form li:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0; 
+	visibility: hidden;
+}
+.basic-form li span.field {
+	display: block;
+	position: relative;
+}
+.basic-form li span.field.empty {
+	font-weight: bold;
+	padding-top: 4px;
+}
+.basic-form li label{
+	float: left;
+	padding: 4px 21px 4px 6px;
+	width: 245px;
+}
+.basic-form li label.full {
+	float: none;
+	width: auto;
+}
+.basic-form li label.auto-label {
+	color: #bbb;
+	cursor: text;
+	display: none;
+	font-size: 12px;
+	padding: 5px 0 0 7px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	z-index: 501;
+}
+.basic-form li label abbr {
+	color: #2d6cbe;
+	font-size: 15px;
+	font-weight: bold;
+	line-height: 1;
+	position: relative;
+	top: 1px;
+	z-index: 500;
+}
+.basic-form li label em {
+	color: #aaa;
+	display: block;
+	font-size: 85%;
+	padding-bottom: 2px;
+}
+.basic-form li label .field-help {
+	cursor: help;
+	font-size: 9px;
+	font-weight: bold;
+	margin-left: 8px;
+	position: relative;
+	z-index: 100;
+}
+.basic-form li input[type=text], .basic-form li input[type=password], .basic-form li textarea { width: 360px; }
+.basic-form li select { width: 372px; }
+.basic-form .form-btns label { font-size: 11px; }
+.basic-form p.fine-print {
+	border-top: 1px solid #eee;
+	color: #aaa;
+	font-size: 10px;
+	padding-top: 8px;
+}
+.basic-form .waiver-block {
+	background: #fff;
+	border: 1px solid #e2e2e2;
+	color: #888;
+	font-size: 11px;
+	line-height: 1.4;
+	margin-bottom: 4px;
+	max-height: 142px;
+	min-height: 28px;
+	overflow: auto;
+	padding: 12px 12px 0 12px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.basic-form li label.check-confirm {
+	display: block;
+	font-size: 11px;
+	padding: 0 0 3px 3px;
+}
+.basic-form li.checkbox .field {
+	float: left;
+	max-width: 370px;
+	padding-top: 3px;
+}
+.basic-form li.checkbox .field label {
+	display: inline-block;
+	float: none;
+	padding: 0 8px 0 0;
+	width: auto;
+}
+
+/* Overlay form adjustments */
+.overlay h3, .overlay .basic-form fieldset h3 {
+	background: #e2e2e2;
+	border-bottom: 1px solid #c2c2c2;
+	line-height: 1.25em;
+	margin: -20px -20px 1em -20px;
+	padding: 12px 20px 10px 20px;
+}
+.overlay .basic-form li label {
+	width: 35%;
+	padding-right: 4.6%;
+	padding-left: 1.2%;
+}
+.overlay .basic-form input[type=text], .overlay .basic-form input[type=password], .overlay .basic-form textarea { width: 57%; }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.overlay .basic-form input[type=text], .overlay .basic-form input[type=password], .overlay .basic-form textarea { width: 57.4%; }
+}
+.overlay .basic-form select { width: 59.1%; }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.overlay .basic-form select { width: 59.5%; }
+}
+.overlay p.form-btns { margin: 0; }
+.basic-form li input.btn { padding: 5px 10px 6px 10px; }
+
+/* Sidebar form adjustments */
+.aside .basic-form input[type=text], .aside .basic-form input[type=password] { width: 181px; }
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.aside .basic-form input[type=text], .aside .basic-form input[type=password] {
+		width: 183px;
+	}	
+}
+.aside .basic-form p.fine-print { border-color: #ddd; }
+
+/* Custom fields */
+.basic-form li.address {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+.basic-form li.address p {
+	background: #eee;
+	margin: 0 0 .75em 0;
+	padding: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.main .login h3 { display: none; }
+#upload-form-member-photo { padding-bottom: 15px; }
+.basic-form li label#profile-photo { padding-bottom: 0; }
+.basic-form li span.upload-group {
+	display: block;
+	padding-top: 14px;
+	padding-bottom: 8px;
+}
+input#uploadImage {
+	font-size: 12px;
+	margin: 0 4px 5px 0;
+	width: auto;
+}
+#password-reminder .basic-form input[type=text] { width: 400px; }
+
+/* Payment Form */
+.cart {
+	background: #f2f2f2;
+	border: 1px solid #ddd;
+	border-width: 0 1px 1px 0;
+	padding: 15px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.cart table { width: 100%; }
+.cart td, .cart th {
+	font-size: 11px;
+	text-align: right;
+	vertical-align: top;
+}
+.cart th { border-bottom: 1px solid #ddd; }
+.cart td { padding: 1.4em 0; }
+.cart .item {
+	padding-right: 1%;
+	padding-left: .75%;
+	text-align: left;
+	width: 84.25%;
+}
+.cart .price {
+	padding-right: .75%;
+	width: 13.25%;
+}
+.cart .subtotal td {
+	border-top: 1px solid #ddd;
+	padding-top: .8em;
+	padding-bottom: .6em;
+}
+.cart .total td {
+	padding-top: 0;
+	padding-bottom: 0;
+	vertical-align: middle;
+}
+.cart .subtotal td.item, .cart .total td.item { text-align: right; }
+.cart .total td.price {
+	padding-right: 0;
+	width: 14%;
+}
+.cart td strong { display: block; }
+.cart input[type=text] {
+	padding: 3px;
+	text-align: right;
+	width: 55px;
+}
+.cart .form-note {
+	margin: 0;
+	text-align: center;
+}
+.basic-form .payment-fields h3 img {
+	left: 5px;
+	position: relative;
+	top: 4px;
+}
+
+
+/*background-image: url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/cc-icons.png);
+this will show the four main types despite the fact only a subset will be available
+*/
+
+.basic-form li.payment-cc-type {
+	background-position: right center;
+	background-repeat: no-repeat;
+}
+.basic-form li.payment-cc-type select { width: 246px; }
+.basic-form li.payment-expiration select#month { width: 267px; }
+.basic-form li.payment-expiration select#year { width: 100px; }
+
+.cart.transactions .date {
+	text-align: left;
+	width: 12%;
+}
+.cart.transactions .date em {
+	color: #aaa;
+	font-style: normal;
+}
+.cart.transactions .item { width: 72.25%; }
+.cart.transactions .price { width: 13.25%; }
+
+/* Filters */
+.filter {
+	padding-bottom: 0;
+	margin-bottom: 26px;
+}
+.filter fieldset {
+	background: #eee;
+	display: inline-block;
+	padding: 0 3px 3px 3px !important;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.filter input.btn {
+	margin-top: 3px;
+	padding: 5px 10px 6px 10px;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.filter input.btn { padding-bottom: 4px; }
+}
+.filter label.inner {
+	color: #888;
+	padding: 0 3px;
+}
+.filter span {
+	display: inline-block;
+	margin-top: 3px;
+}
+
+
+/*  ----------------------------------------------------------
+	L O G I N  (and other narrow pages)
+-------------------------------------------------------------- */
+.narrow .wrap, .narrow #content .wrap, .narrow #footer .wrap {
+	padding-right: 0;
+	padding-left: 0;
+	width: 420px;
+}
+.narrow .basic-form input[type=text], .narrow .basic-form input[type=password], .narrow .basic-form textarea { width: 342px; }
+.narrow #logo { padding: 0 28px; }
+.narrow #logo h1 { font-size: 26px; }
+.narrow #page-title { display: none; }
+.narrow .mod { margin: 5px 0 20px 0; }
+
+
+/*  ----------------------------------------------------------
+	C O N T E N T   M O D U L E S
+-------------------------------------------------------------- */
+/* Site notices */
+.site-notice {
+	background: #ffffdd;
+	border-bottom: 1px solid rgba(0,0,0,.12);
+	margin: 0;
+	padding-top: 1.2em;
+	padding-bottom: 1em;
+}
+.main .site-notice {
+	border-right: 1px solid rgba(0,0,0,.12);
+	margin: 0 30px 30px 30px;
+	padding: 1em 15px .75em 18px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.site-notice h4 {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/star.png) -2px 2px no-repeat;
+	font-size: 13px;
+	margin-bottom: .25em;
+	padding: 2px 0 0 20px;
+}
+.site-notice p {
+	font-size: 11px;
+	margin: 0;
+	padding-bottom: .5em;
+}
+.site-notice p:first-child {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/star.png) -2px 0 no-repeat;
+	padding: 1px 0 .25em 20px;
+}
+.mod .cart .site-notice {
+	margin: 1.3em 0 0 0;
+	padding: 10px 10px 0 10px;
+}
+.cart .site-notice p {
+	padding-bottom: 10px;
+	text-align: center;
+}
+.cart .site-notice p:first-child { background-image: none; }
+.main h1 .site-notice {
+	color: #aaa;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0 0 0 3px;
+	letter-spacing: 0;
+	padding: 4px 8px;
+	position: relative;
+	top: -.5em;
+	white-space: nowrap;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;*/
+}
+.mod .site-notice { margin: 0 0 2em 0; }
+.aside .site-notice {
+	margin-top: -20px;
+	margin-bottom: 20px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+p.inline-notice {
+	background: url(" http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/star.png") no-repeat scroll -2px 0 transparent;
+	padding: 1px 0 0 20px;
+}
+
+/* Table display */
+.basic-table {
+	font-size: 12px;
+	width: 100%;
+}
+.basic-table th {
+	background-color: #e2e2e2;
+	color: #999;
+	font-size: 10px;
+	line-height: 10px;
+	padding: 7px 8px 4px 8px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 1%;
+}
+.basic-table td {
+	border-top: 1px dotted #ddd;
+	padding: 8px 9px;
+	text-align: center;
+	vertical-align:middle;
+	width: 1%;
+}
+.basic-table th.main-col, .basic-table td.main-col {
+	text-align: left;
+	width: auto;
+}
+.basic-table .alt td { background: #f6f6f6; }
+
+/* Table key */
+dl.key {
+	border-top: 1px solid #ddd;
+	padding-top: 21px;
+	text-align:center;
+}
+dl.key dt, dl.key dd {
+	display: inline;
+	font-size: 10px;
+	line-height: 21px;
+}
+dl.key dt {
+	border-left: 1px solid #eee;
+	color: #ccc;
+	font-weight: bold;
+	margin: 0;
+	padding-left: 8px;
+}
+dl.key dt:first-child {
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+dl.key dd {
+	color: #888;
+	margin: 0 -4px 0 0;
+	padding-right: 7px;
+}
+
+/* Form steps */
+.form-steps {
+	background: #f6f6f6;
+	padding: 10px 15px;
+	margin-right: 30px;
+	margin-left: 30px;
+	margin-top: -2.6em;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+.form-steps p {
+	font-size: 13px;
+	margin-bottom: .5em;
+}
+.form-steps p a {
+	font-size: 11px;
+	margin-left: 5px;
+}
+.form-steps ol { margin: 0; }
+.form-steps li {
+	float: left;
+	font-size: 11px;
+	list-style: decimal;
+	list-style-position: inside;
+	margin: 0 15px 0 0;
+}
+.form-steps li.off { color: #aaa; }
+.form-steps li.current {
+	color: #484848;
+	font-weight: bold;
+}
+.form-steps li.done {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/reg-done.png) 1px center no-repeat;
+	color: #ccc;
+	list-style: none;
+	padding-left: 21px;
+	text-decoration: line-through;
+}
+
+/* Base event listings */
+.base-listing li {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/listing-divider.png) 0 top repeat-x;
+	list-style: none;
+	margin: 1.75em 0 0 0;
+	padding: 2em 0 0 0;
+	position: relative;
+}
+.base-listing li:first-child {
+	background: transparent;
+	margin-top: 0;
+	padding-top: 0;
+}
+.base-listing li:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0; 
+	visibility: hidden;
+}
+.base-listing .site-notice {
+	font-size: 11px;
+	margin: 0;
+}
+.base-listing .base-meta {
+	float: left;
+	padding-right: 1%;
+	width: 65%;
+}
+.base-listing .base-actions, .base-listing .base-schedule {
+	float: right;
+	text-align: right;
+	width: 34%;
+}
+.base-actions { padding-bottom: 1em; }
+.base-actions p.alert {
+	display: block;
+	font-size: 11px;
+	padding: 6px 8px 8px 8px;
+	text-align: center;
+}
+.base-actions p.alert strong {
+	display: block;
+	margin-bottom: .5em;
+}
+.base-actions .site-notice {
+	display: inline-block;
+	margin-top: .5em;
+	padding: 5px 10px 4px 10px;
+}
+.right-col .base-actions .site-notice br, .left-col .base-actions .site-notice br { display: none; }
+.base-meta h2 {
+	font-weight: normal;
+	margin: 0 0 -.2em 0;
+}
+.base-meta h2 em {
+	color: #aaa;
+	font-size: .8em;
+	font-style: normal;
+	margin-left: 3px;
+}
+.base-meta h2 .site-notice {
+	font-size: 11px;
+	font-style: normal;
+	font-weight: bold;
+	margin: 0 0 0 3px;
+	padding: 4px 8px;
+	position: relative;
+	top: -.4em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;*/
+}
+.base-meta p { margin-bottom: .75em; }
+.base-meta dl.basic { font-size: 11px; }
+
+.short-listing .base-meta h2 { font-size: 16px; }
+.base-listing.short-listing li {
+	margin-top: .75em;
+	padding-top: 1.5em;
+}
+.base-listing.short-listing li:first-child {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+.base-listing.grouped h3 {
+	color: #aaa;
+	font-size: 14px;
+	letter-spacing: 0;
+	text-transform: uppercase;
+}
+.base-listing.grouped h3 a { color: #aaa; }
+.base-listing.grouped h3 a:hover { color: #484848; }
+.base-listing.grouped ul { margin-bottom: 2em; }
+.base-listing.invoices .base-meta h2 {
+	font-size: 15px;
+	line-height: 1.25;
+	margin: .15em 0 .35em 0;
+}
+.base-listing.invoices .base-meta h2 em { font-size: .9em; }
+.base-listing .base-schedule { padding: .25em 0 .5em 0; }
+.base-gamedays {
+	border: 1px solid #ccc;
+	border-right: none;
+	display: inline-block;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.base-gamedays del, .base-gamedays strong {
+	border-right: 1px solid #ccc;
+	display: inline-block;
+	font-size: 9px;
+	padding: 3px 6px;
+	text-transform: uppercase;
+}
+.right-col .base-gamedays del, .right-col .base-gamedays strong, .left-col .base-gamedays del, .left-col .base-gamedays strong { padding: 3px 4px; }
+.base-gamedays del {
+	color: #ccc;
+	text-decoration: none;
+}
+.base-gamedays strong {
+	background: #eee;
+	text-shadow: #fff 1px 1px 0;
+}
+.base-schedule em {
+	color: #aaa;
+	display: block;
+	font-size: 10px;
+	margin: .25em 0;
+}
+.aside .base-schedule { margin-bottom: 1em; }
+.base-format {
+	border-top: 1px solid #eee;
+	font-size: 10px;
+	margin-top: 1em;
+	padding-top: 1em;
+}
+.aside .base-format {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/bevel.png) 0 0 repeat-x;
+	border: none;
+}
+.base-fees {}
+.base-fees dl {
+	background: #eee;
+	float: left;
+	margin: 0;
+	padding: 0 1% 13px 1%;
+	width: 47.5%;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.right-col .base-fees dl, .left-col .base-fees dl {
+	padding-right: 1.5%;
+	padding-left: 1.5%;
+	width: 46.5%;
+}
+.base-fees dl.first { margin-right: 1%; }
+.aside .base-fees dl.first { margin-right: 0; }
+.base-fees dl.solo {
+	float: none;
+	margin: 0;
+	width: 98%;
+}
+.base-fees dt {
+	border-bottom: 1px solid #ddd;
+	margin-bottom: .3em;
+	padding: 10px 0 1px 0;
+}
+.base-fees dd { margin: 0; }
+.base-fees dd .tag {
+	background: #fff;
+	margin-left: 0;
+}
+.base-fees em {
+	color: #aaa;
+	font-size: .85em;
+	font-style: italic;
+}
+.aside .base-fees dl {
+	background: transparent;
+	padding: 0;
+	width: 100%;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+.aside .base-fees dl, .aside .base-fees dt, .aside .base-fees dd { font-size: 11px; }
+.aside .base-fees dt {
+	font-weight: bold;
+	padding-top: 8px;
+}
+.aside .base-fees dl.first dt { padding-top: 0; }
+.aside .base-fees dd { margin-bottom: 7px; }
+.aside .base-fees dd em { display: block; }
+
+/* Schedule */
+.schedule li {
+	list-style: none;
+	margin: 0;
+}
+.schedule h4 {
+	font-size: 10px;
+	margin-top: 3em;
+	text-transform: uppercase;
+}
+.schedule li:first-child h4 { margin-top: 0; }
+.schedule h4 .tag {
+	font-size: 10px;
+	margin-left: 0;
+	padding: 1px 3px 0 5px;
+}
+.schedule li ul { margin: 0; }
+.schedule li li {
+	background: #eee url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/bevel-vert.png) 29.5% 0 repeat-y;
+	margin-bottom: 6px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: rgba(0,0,0,.12) 0 1px 0;
+}
+.schedule span.tbd, .schedule abbr { color: #aaa; }
+.schedule .meta, .schedule .game {
+	float: left;
+	font-size: 11px;
+	padding: 8px 2%;
+}
+.schedule .meta { width: 25.5%; }
+.schedule .meta .date, .schedule .meta .time { font-size: 14px; }
+.schedule .meta abbr {
+	position: relative;
+	top: -.25em;
+}
+.schedule .game { width: 66.5%; }
+.schedule .game p {
+	color: #aaa;
+	margin: 0;
+}
+.schedule .game p a, .schedule .game p span.tbd {
+	font-size: 14px;
+	font-weight: bold;
+}
+.schedule .game em { font-style: normal; }
+.schedule .game .game-meta {
+	float: left;
+	padding-right: 2%;
+	width: 73%;
+}
+.schedule .game .official {
+	float: right;
+	text-align: right;
+	width: 25%;
+}
+.schedule .game .official em {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-ref.png) 0 0 no-repeat;
+	color: #aaa;
+	display: inline-block;
+	font-size: 10px;
+	padding: 1px 0 0 20px;
+}
+
+/* Notes */
+.schedule .meta .game-note {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-note.png) 0 2px no-repeat;
+	color: #aaa;
+	display: block;
+	font-size: 11px;
+	left: -2px;
+	line-height: 1.2;
+	max-width: 351px;
+	padding: 2px 0 1px 20px;
+	position: relative;
+}
+.schedule .meta .game-note-full {
+	color: #484848;
+	display: none;
+	background: #ffffdd url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-note.png) 3px 4px no-repeat;
+	border: 1px solid rgba(0,0,0,.12);
+	left: -4px;
+	padding: 4px 8px 5px 23px;
+	position: absolute;
+	top: -3px;
+	width: 260px;
+	z-index: 200;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: rgba(0,0,0,.1) 0 1px 1px;
+	-webkit-box-shadow: rgba(0,0,0,.1) 0 1px 1px;
+	box-shadow: rgba(0,0,0,.1) 0 1px 1px;
+}
+.schedule .meta:hover .game-note-full { display: block; }
+.schedule .date-note {
+	background: #eee url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-note.png) 10px -41px no-repeat;
+	margin-bottom: 6px;
+	padding: 8px 2% 8px 32px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	-moz-box-shadow: rgba(0,0,0,.12) 0 1px 0;
+}
+.schedule .date-note-type1 {
+		background-color: #ffffdd;
+		border-color: #dedea1;
+	}
+.schedule .date-note-type2 {
+		background-color: #ffe6df;
+		border-color: #ddb2a4;
+	}
+.schedule .date-note-type3 {
+		background-color: #e2ecfb;
+		border-color: #aabbd7;
+	}
+.schedule .date-note-type4 {
+		background-color: #e1fbe9;
+		border-color: #a9d7b7;
+	}
+.schedule .date-note-type5 {
+		background-color: #d6d6d6;
+		border-color: #adadad;
+	}
+.schedule .date-note p {
+	font-size: 11px;
+	font-style: italic;
+	margin: 0;
+}
+.schedule .date-note p strong {
+	border-right: 1px solid rgba(0,0,0,.12);
+	font-style: normal;
+	font-size: 10px;
+	margin-right: 4px;
+	padding-right: 8px;
+	text-transform: uppercase;
+}
+
+/* Alternate Game Views */
+.schedule .rescheduled, .schedule .rescheduled span.tbd, .schedule .rescheduled abbr, .schedule .rescheduled .game p { color: #aaa; }
+.schedule .rescheduled .game p, .schedule .completed p { float: left; }
+.schedule .rescheduled .game-meta, .schedule .completed .game-meta {
+	margin: 2px 0 0 5px;
+	padding: 0;
+	width: auto;
+}
+.schedule .rescheduled a.game-type {
+	background: #f8810a;
+	color: #fff;
+}
+.schedule .rescheduled .tag em {
+	font-style: italic;
+	font-weight: normal;
+	padding-right: 1px;
+	text-transform: none;
+}
+.schedule .rescheduled.cancelled .meta { text-decoration: line-through; }
+.schedule .rescheduled.cancelled .tag, .schedule .completed .tag {
+	background: #ddd;
+	color: #999;
+}
+.schedule .completed .game-note { display: none; }
+.schedule .completed .team-score:first-child { margin-right: 8px; }
+.schedule .completed .team-score .score {}
+.schedule .completed .team-score.winner .score { color: #484848; }
+.schedule .team-result {
+	background: #ddd url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/win-loss-marker.png) -296px 0 no-repeat;
+	background-color: rgba(0,0,0,.07);
+	border-left: 1px solid rgba(255,255,255,.84);
+	color: #aaa;
+	float: right;
+	font-size: 14px;
+	font-weight: bold;
+	height: 21px;
+	line-height: 22px;
+	margin: -8px -3% -8px 10px;
+	min-width: 66px;
+	overflow: hidden;
+	padding: 8px 3% 8px 16px;
+	text-align: center;
+	-moz-border-radius: 0 3px 3px 0;
+	-webkit-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+.schedule .team-result.win {
+	background-color: #2d6cbe;
+	background-position: -4px 0;
+	color: #fff;
+}
+.schedule .team-result strong { display: none; }
+
+/* Standings */
+.standings p {
+	border-top: 1px dotted #ddd;
+	font-size: 11px;
+	margin: 0 auto;
+	padding-top: .75em;
+	text-align: center;
+	width: 25%;
+}
+
+/* Logos & Photos */
+.program-logo {}
+.aside .program-logo {
+	display: block;
+	margin-left: 21px;
+	margin-bottom: 8px;
+	width: 150px;
+}
+.program-logo img {
+	display: block;
+	margin: 0;
+}
+.aside .program-logo img { max-width: 150px; }
+
+/* Roster, Pending, Tentative, Free Agents, Teams */
+.entity-listing h3 { position: relative; }
+.entity-listing li {
+	border-bottom: 1px dotted #eee;
+	list-style: none;
+	margin: 0 0 12px 0;
+	padding: 0 0 10px 0;
+}
+
+.entity-listing .player .tentative { background-color: red; color: #fff; }
+.entity-listing .player .tentative .help { color: #fff; font-size: 9px;}
+
+.player, .team { position: relative; }
+.entity-listing dt { font-size: 14px; }
+.entity-listing dt.thumb {
+	float: left;
+	margin-right: 15px;
+}
+.entity-listing.pending dt.thumb img { width: 50px; }
+.entity-listing dt .tag {
+	position: relative;
+	top: -2px;
+}
+.entity-listing .entity-meta, .entity-listing .entity-details {
+	color: #aaa;
+	font-size: 11px;
+	margin: -2px 0 6px 0;
+}
+.entity-listing .entity-details {
+	font-style: italic;
+	margin: 0;
+}
+.entity-listing .entity-actions {
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 500;
+}
+.entity-listing .player .roster-dues { margin-left: -1px; }
+.entity-listing .player .roster-dues.alert {
+	font-size: 9px;
+	font-weight: bold;
+	padding: 1px 4px;
+}
+
+/* Social Rosters/Lists */
+.social-list li {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/bevel.png) 0 bottom repeat-x;
+	list-style: none;
+	line-height: 33px;
+	margin: 0 0 3px 0;
+	min-height: 33px;
+	padding: 0 0 3px 0;
+}
+.social-list li img {
+	float: left;
+	margin-right: 8px;
+}
+.member-matching-callouts { text-align: center; }
+.member-matching-callouts a { margin: 3px 0; }
+
+/* Team Captain */
+.team { margin-top: 25px; }
+.team-captain dt.thumb {
+	background: #fff;
+	background: rgba(255,255,255,.75);
+	border: 1px solid #aaa;
+	border: 1px solid rgba(0,0,0,.12);
+	margin-left: 4px;
+	margin-right: 10px;
+	padding: 2px;
+	position: relative;
+	top: -15px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+}
+.team-captain dt.thumb img { display: block; }
+.team-captain dt { font-size: 11px; }
+.team-captain dt .tag {
+	line-height: 10px;
+	padding: 2px 4px;
+	top: 0;
+}
+
+/* Roster (sidebar) */
+.aside .entity-listing li {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/bevel.png) 0 bottom repeat-x;
+	margin-bottom: 5px;
+	padding-bottom: 9px;
+}
+.aside .entity-listing li .player { margin: 0; }
+.main .entity-listing h3, .aside .entity-listing em.dues, .aside .player .btn-edit, .aside .entity-listing .player dd.entity-meta { display: none; }
+.aside .entity-listing .player a { font-size: 12px; }
+.aside .entity-listing .player .btn-message {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-eml.png) 0 0 no-repeat;
+	font-size: 12px;
+	height: 14px;
+	padding: 0;
+	position: relative;
+	text-indent: -9999px;
+	top: 3px;
+	width: 19px;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+.aside .entity-listing .player .btn-message:hover { background-position: 0 -20px; }
+.aside .entity-listing .player .btn-message:active {
+	background-position: 0 -40px;
+	top: 4px;
+}
+.aside .entity-listing dt {
+	line-height: 16px;
+	width: 175px;
+}
+.aside .entity-listing dt.thumb {
+	margin: 3px 8px 0 0;
+	width: auto;
+}
+
+/* Locations */
+.location-list li {
+	border-top: 1px solid #eee;
+	list-style: none;
+	margin: 35px 0 0 0;
+	padding-top: 1px;
+}
+.location-list li:first-child { margin-top: 0; }
+.location-view {
+	float: left;
+	margin-right: 30px;
+	padding-top: 15px;
+	width: 615px;
+}
+.location-view h2 { margin-bottom: .05em; }
+.location-view #map-frame, .location-view .google-map {
+	background: #f6f6f6;
+	border: 1px solid rgba(0,0,0,.07);
+	padding: 6px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.location-details {
+	background: #f6f6f6;
+	border-left: 1px solid rgba(0,0,0,.07);
+	float: right;
+	padding: 15px 15px 5px 15px;
+	width: 243px;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
+}
+.location-details, .location-details li { font-size: 11px; }
+.vcard { font-size: 12px; }
+.get-directions {
+	margin-bottom: 2em;
+	padding-top: 8px;
+}
+.get-directions .basic-form li { margin-top: 0; }
+.get-directions .basic-form li span.field { display: inline-block; }
+.get-directions .basic-form li input[type=text] { width: 180px; }
+.sublocations li {
+	border: none;
+	list-style: decimal;
+	margin: 0 0 .25em 1.5em;
+	padding: 0;
+}
+.sublocations li strong {
+	position: relative;
+	top: 1px;
+}
+.sublocations li em {
+	color: #aaa;
+	display: block;
+	margin-top: -2px;
+}
+
+/* Single Location Profile */
+.locations.single-location { margin-top: -2.6em; }
+.locations.single-location .location-list li { border: none; }
+.locations.single-location .location-view h2 { display: none; }
+
+
+/* Sample Program Tags & Alerts */
+.base-meta h2 .tag.sample-program, #page-title .tag.sample-program {
+	font-size: 9px;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	line-height: 1.5em;
+	background: #F8810A;
+	color: white;
+	margin: 0 0 0 3px;
+	padding: 2px 4px 1px 4px;
+	position: relative;
+	top: -.4em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.alert.sample-program{
+	margin-bottom: 10px;
+}
+
+/* Generic Announcments - Dev, Status Updates, etc */
+
+#announcement {
+	background-color: #fffcd1;
+	border: 1px solid #e1deb1;
+	padding: 4px 17px;
+	margin: -35px auto 38px;
+}
+
+#announcement p {
+	color: #b5b16c;
+	font-size: 12px;
+	margin: 0;
+	text-align: center;
+}
+
+#announcement p span {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/console/dev-announcment-icon.png) 0 4px no-repeat;
+	display: inline-block;
+	padding: 2px 25px;
+}
+
+
+/* Facebook Like Button Instances */
+
+#account-nav .fb-like{
+	float: left;
+	position: relative;
+	right: 55px;
+	top: -28px;
+}
+
+/* make the like button smaller to hide the counter */
+#account-nav .fb_edge_widget_with_comment iframe{ width:49px !important;}
+
+/* but make the span that holds the comment box larger */
+#account-nav span.fb_edge_comment_widget.fb_iframe_widget iframe{width:401px !important;}
+
+
+#footer .wrap .fb-like{
+	float: left;
+	position: relative;
+	display: block;
+	width: 450px;
+	left: 375px;
+	top: -37px;
+	margin-left: 10px;
+}
+
+/* hide the FB Like and Send button on the login page */
+body.narrow #footer .wrap .fb-like{display: none !important;}
+
+/* SIGN UP PAGE ---  Facebook Connect and Sign In Button */
+
+.main .fb-connect{
+	background-color: #647ab2;
+	width: 670px !important;	
+	margin: -20px 0 25px 0;
+	padding: 0 30px 0;
+	border-bottom: 1px solid #294283;
+	float: left;
+	
+}
+.main .fb-connect .dark-bg{
+	background:  #505b77 url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/fb-connect-bg.jpg) 0 0 no-repeat;
+	display: block;
+	float: right;
+	height: 44px;
+	position: relative;
+	top: 0
+	width: 199px;
+	right: -30px;
+	padding: 0 17px 0 0;
+}
+		
+.main .fb-connect #message{
+	float: left;
+	color: #fffff;		
+}
+.main .fb-connect p{
+	font-size: 13px;
+	color: #FFF;
+	text-shadow: rgba(0,0,0,.52) 0 1px 0;
+	padding: 12px 0 0 0;
+}
+.main .fb-connect #message.success{background:  transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/fb-connect-message-bg.png) bottom right no-repeat;	}
+.main .fb-connect #message.success p{ font-size: 14px; padding: 0; color: #dbe4fc;}
+.main .fb-connect #message.success p:first-child{margin-bottom: 0; padding: 12px 0 0 0;}
+.main .fb-connect #message.success p.title{font-size: 20px; padding-bottom: 5px; display: block; color: #fff; margin-bottom: 0;}
+
+.main .fb-connect p strong{font-size: 14px; color: #fff;}
+
+.main .fb-login-button a.fb_button.fb_button_medium{	
+	margin: 11px 0 0 17px;
+	padding: 0;	
+}
+.main .fb-connect .fb-login-button {color: #505b77 !important;} /* Hides text when button is loading */
+
+
+/* LOG IN PAGE ---  Facebook Connect Button */
+
+a.fine-print.right {margin-top: 8px;  float: right;}
+
+.mod.login p.option-divider {
+	border-top: 1px solid #eee; 
+	margin: 25px 0 2px 0;
+	text-align: center;
+}
+.mod.login p.option-divider strong{
+	color: #999;
+	background-color: #fff;
+	padding: 0 10px;
+	position: relative;
+	top: -12px;
+}
+
+.mod.login .fb-login-connect{
+	background-color: #EEE;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	text-align: center;
+	margin: 0 0 30px 0;
+	padding: 10px 0;
+}
+
+.mod.login .fb-login-connect p{
+	color: #999;
+	font-size: 11px;
+	margin: 0;
+}
+.main .fb-login-connect .fb-login-button a.fb_button.fb_button_medium{	
+	margin: 0 0 5px 0;
+	padding: 0;	
+}
+
+/* EDIT PROFILE PAGE ---  Facebook Profile Photo */
+
+#fbPhotoSection li  {
+	background: #eee;
+	list-style: none;
+	margin: 0 0 .75em 0;
+	padding: 3px 0 3px 2px;
+	position: relative;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#fbPhotoSection label {
+	float: left;
+	padding: 4px 21px 4px 6px;
+	width: 105px;
+}
+
+#fbPhotoSection span.fb-photo-group {
+	margin: 5px 0 15px 0;
+	display: block;
+}
+
+#fbPhotoSection span.fb-photo-group strong {	
+	margin: 0 0 8px 0;
+	padding: 0;
+	display: inline-block;
+}
+#fbPhotoSection span.fb-photo-group span.option {
+	font-size: 12px;
+	font-weight: bold;
+	font-style: italic;
+	color: #999;
+	padding: 0 10px;
+}
+#fbPhotoSection span.fb-photo-group em {
+	font-size: 11px;
+	color: #333;
+	display: inline-block;
+	margin: 10px 0 5px 0;
+}
+#fbPhotoSection span.preview-bar {
+	background: #8d8d8d;
+	padding: 0;
+	margin: 0;
+	color: #fff;
+	text-shadow: rgba(0,0,0,.52) 0 1px 0; 
+	display: block;
+	height: 15px;
+	width: 100px;
+	position: absolute;
+	bottom: 15px;
+	text-align: center;
+	font-weight: bold;
+	opacity:0.85;
+	filter:alpha(opacity=85); /* For IE8 and earlier */
+	font-size: 10px !important;
+	text-transform: uppercase;	
+}
+#fbPhotoSection span.preview-bar p {font-size: 10px !important;}
+
+.basic-form li label#profile-photo {
+	width: 155px;
+}
+
+.basic-form li span.upload-group strong {
+	margin: 0 0 8px 0;
+	padding: 0;
+	display: inline-block;
+}
+
+
+/* DASHBOARD ---  Edit Facebook Settings & CTA */
+h1#page-title span.fb-cog {
+	margin-top: 10px;
+	display: inline-block;
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-cog.png) 0 7px no-repeat;
+	padding: 0 0 0 20px;
+}
+
+h1#page-title span.fb-cog a{font-size: 11px;}
+
+h1#page-title span.fb-cog.fb {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-cog.png) 0 -18px no-repeat;
+}
+
+/* ---  CTA  ---  */
+.main .fb-account-cta{
+	margin: 0 0 25px 30px;
+	padding: 15px;
+	width: 618px;
+}
+.main .fb-account-cta p {font-size: 12px;}
+
+.main .fb-account-cta p strong {
+	font-size: 14px;
+	display: inline-block;
+	padding-bottom: 5px;
+}
+.main .fb-account-cta .mod {
+	padding: 0;
+	margin: 0;
+}
+
+
+ /* ---  Edit Facebook Settings  ---  */
+.main ul.fb-status {
+	padding: 0;
+	margin: 0;
+ 
+ }
+.main ul.fb-status li {
+	background: #eee;
+	list-style: none;
+	margin: 0 0 .75em 0;
+	padding: 10px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px; 
+}
+.main ul.fb-status li label {
+	font-size: 14px;
+	font-weight: bold;
+	padding-right: 20px;
+}
+.main ul.fb-status li .fb-login-button {	
+	float: right !important;
+	padding: 0;
+	display: inline-block;	
+}
+
+ul.fb-status li .fb-login-button a.fb_button.fb_button_medium{margin: 0;}
+
+.main ul.fb-status li #fbConnectStatus {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/fb-status.png) 0 0 no-repeat;
+	padding-left: 23px;
+	height: 18px;
+	display: inline-block;	
+}
+.main ul.fb-status li #fbConnectStatus {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/fb-status.png) 0 0 no-repeat;
+	padding-left: 23px;
+	height: 18px;
+	display: inline-block;	
+}
+.main ul.fb-status li #fbConnectStatus.not-connected {
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/fb-status.png) 0 -17px no-repeat;
+}
+
+#announcement.fb {
+	background-color: #fffcd1;
+	border: 1px solid #e1deb1;
+	padding: 4px 17px;
+	margin: 0 0 15px 0;
+}
+
+#announcement.fb p {
+	color: #b5b16c;
+	font-size: 12px;
+	margin: 0;
+	text-align:left;
+}
+
+.main .mod.profile-photo img{
+	float: left;
+	padding: 3px 15px 0 0;
+	margin-bottom: 20px;
+}
+.main .mod.profile-photo p{
+	margin-bottom: 5px;
+}
+
+
+/* --- Program Pages :::: Social Buttons  ---  */
+.program-fb-like { 
+	padding: 0;
+	margin: 0;
+}
+.aside .program-tweet{	
+	padding: 0;
+	margin: 0;
+}
+.aside p.social-sub-title{
+	padding: 0 0 0 21px;
+	margin: 5px;
+}
+.aside .program-social-btns{	
+	padding-left: 24px;
+	margin-bottom: 12px;	
+}
+
+.aside p.social-sub-title a.wall-chat-cta{
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/icon-wall-chat.png) 0 1px no-repeat;
+	padding: 0 0 0 24px;
+	display: inline-block;	
+	margin-top: 4px;
+	margin-bottom: 20px;
+}
+.aside p.social-sub-title a.wall-chat-cta:hover{
+	background-position: 0 -24px;
+	
+}
+
+/*  ----------------------------------------------------------
+	A  C  T  I  V  I  T  Y      W  A  L  L  
+-------------------------------------------------------------- */
+
+#activity-wall{
+	background-color: #eeeeee;
+	border: 1px solid #dfdfdf;
+	padding: 0;
+	width: 645px; 
+}
+
+#activity-wall ul{ margin: 0;}
+
+#activity-wall ul li{ 
+	padding: 10px;
+	margin: 0;
+	min-height: 50px;
+	list-style: none;
+	border-top: 1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf;
+	display: block;	
+}
+#activity-wall ul li:first-child{ border-top: none !important;}
+#activity-wall ul li:last-child{ border: none;}
+#activity-wall ul li.alt{ 
+	background-color: #f8f8f8;
+	border: none;
+}
+
+#activity-wall ul li:nth-child(2){ border-top: none !important;}
+
+
+
+#activity-wall ul li .content{ 
+	margin: 0;
+	padding: 0 0 0 55px;
+}
+#activity-wall ul li p{ 
+	margin: 0;
+	padding: 0;
+}
+
+#activity-wall ul li .content .user-handle .timestamp{ 
+	color: #919191;
+	font-size: 11px;
+}
+
+#activity-wall ul li .content em.tag{ 
+	background-color: #bebebe;
+	color: #fff;
+	text-shadow: rgba(0,0,0,.212) 0 1px 0;
+	padding: 2px 4px 0;
+	margin: 0 2px 0 3px;
+}
+#activity-wall ul li span.field{
+	display: block;
+	position: relative;
+	margin-bottom: 5px;
+}
+
+#activity-wall ul li span.field textarea { 
+	width: 98%; 
+	height: 45px; 
+	border: 1px solid #dfdfdf; 
+}
+#activity-wall ul li span.field label.auto-label {
+	color: #BBB;
+	cursor: text;
+	display: none;
+	font-size: 12px;
+	padding: 5px 0 0 7px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	z-index: 501;
+}
+#activity-wall input#post-comment-btn.btn{ padding: 4px 10px !important; margin: 0 3px 0 0; float: right;}
+
+#activity-wall span.post-type{ float: right;}
+
+div.wall-pagination{ 
+	background: #d7d8d8 url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/wall-pagination-bg.jpg) 0 0 repeat-x; 
+	margin:0 ;
+	height: 15px;
+	padding: 8px 10px 8px;
+	border-top: 1px solid #fff;
+	border-right: 1px solid #dfdfdf;
+	border-left:1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf;
+	width: 67%; 
+}
+div.wall-pagination p{ 
+	margin:0 ;
+	padding: 0;
+}
+
+#activity-wall p.wall-post-type strong {
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 0;
+}
+/* --- Special Instances -- No Posts to Show, Load More  ---  */
+
+#activity-wall ul li#no-posts { 
+	padding: 10px;
+	border-top: 1px solid #DFDFDF;
+	margin: 0;
+	min-height: inherit;
+}
+
+#activity-wall ul li.facebook{border: none;}
+#activity-wall ul li.load-more{min-height: inherit;}
+#activity-wall ul li.load-more input.btn{
+	padding: 5px 10px 5px 10px;
+	width: 100%;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	background-color: #c3c3c3;
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, .12) 0 1px 0;
+	border: 1px solid #b6b6b6;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+#activity-wall ul li.load-more input.btn:hover{
+	background-color: #b6b6b6;
+}
+
+
+
+
+
+/* --- Post Form Styles (toggles, labels ,inputs)  ---  */
+#activity-wall ul li#postFormItem { 
+	min-height: inherit;
+	border: none;
+}
+#activity-wall ul li#postFormItem label #charLimit { 
+	font-size: 10px;
+	color: #aaa;
+	font-style: normal;
+	padding: 3px 2px 0 0;
+}
+
+#activity-wall ul li#postFormItem span#publicToggle strong, #activity-wall ul li#postFormItem span#postToFacebookShell strong { margin: 0 3px 0 0;}
+#activity-wall li#postFormItem span.field.post-type-drop select{
+	border: 1px solid #DFDFDF;
+	font-size: 11px;
+} 
+#activity-wall li#postFormItem span.field.post-type-drop{
+	float: left;
+	clear: both;
+	padding-top: 0;
+	margin-right: 15px;
+} 
+
+/* --- Toggles  ---  */
+
+#activity-wall span.iToggle{ 
+	float: right; 
+	
+}
+#activity-wall span#publicToggle { 
+	float: left; 
+	margin: 1px 0 0 2px; 
+	line-height: 24px; 
+}
+#activity-wall span#postToFacebookShell{
+	float: left; 
+	margin: 1px 15px 0 0; 
+	line-height: 24px;
+	display: block;
+}
+
+#activity-wall .iToggle label .slider { height: 19px;}
+
+#activity-wall .iToggle strong { margin: 0;}
+
+#activity-wall .iToggle label strong.on-label {
+	background: #2D6CBE url( http://svite-league-apps-static.s3.amazonaws.com/_i/console/itoggle-fb.jpg) 0 0 no-repeat;
+	border: 1px solid #1D4483;
+	border-right: none;
+	border-bottom: none;
+	color: white;
+	left: -31px;
+	padding-bottom: 1px;
+	text-shadow: rgba(0, 0, 0, .34) 0 -1px 0;
+	width: 30px;
+	-moz-border-radius: 2px 0 0 2px;
+	-webkit-border-radius: 2px 0 0 2px;
+	border-radius: 2px 0 0 2px;
+	border-image: initial;
+	text-indent: -9999px;
+}
+@-moz-document url-prefix() {
+  #activity-wall .iToggle label strong.on-label {
+     padding-bottom: 2px;
+  }
+}
+#activity-wall .iToggle label strong.off-label {
+	background: #2D6CBE url( http://svite-league-apps-static.s3.amazonaws.com/_i/console/itoggle-fb.jpg) -30px 0 no-repeat;
+	text-indent: -9999px;
+}
+#activity-wall .iToggle.public.eye label strong.on-label {background-position: -60px 0;}
+#activity-wall .iToggle.public.eye label strong.off-label {background-position: -90px 0;}
+
+/* --- FB Login Button positioning instances ---  */
+#activity-wall ul#wall-root .fb-login-button {
+	float: right;
+	position: relative;
+	top: -27px;
+}
+
+#activity-wall ul#wall-root #postEditorForm .fb-login-button {
+	float: left;
+	top: 2px;
+	margin-right: 12px;
+}
+
+#activity-wall ul#wall-root .fb-login-button a.fb_button.fb_button_medium {margin: 0;}
+
+#activity-wall ul li.facebook .fb-login-button a.fb_button.fb_button_medium {
+	margin: 0;
+	padding: 0;
+}
+
+#activity-wall #wall-root .wall-delete-btn{
+	background: transparent url( http://svite-league-apps-static.s3.amazonaws.com/_i/_site2.0/wall-post-delete-icon.png) 0 0 no-repeat; 
+	display: block;
+	width: 11px;
+	height: 11px;
+	padding: 0;
+	margin: 0;
+	border: none;
+	text-indent: -9999px;
+	float: right;
+	top: -50px;
+	position: relative;
+	clear: both;
+	right: -2px;
+	cursor: pointer;
+} 
+#activity-wall #wall-root .wall-delete-btn:hover{background-position: 0 -13px;} 
+
+#delete-wall-post-dialog blockquote#delete-wall-post-msg{
+	color: #888 !important;
+	padding: 10px;
+	border: 1px dashed #888;
+	font-size: 12px;
+}
+#delete-wall-post-dialog p{font-weight: bold; margin-bottom: 10px;}
+#delete-wall-post-dialog .form-btns{margin-top: 15px;}
+
+
+
+/* --- Wall Post Thumbnails  ---  */
+
+#activity-wall ul#wall-root .wall-post-left{
+	display: block;
+	float: left;
+	border: 1px solid #dcdcdc;
+}
+
+#activity-wall .wall-post-left img{ 
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	height: 40px;
+	width: 40px;
+	background-color: #dfdfdf;
+	border: 3px solid #fff;
+	overflow: hidden;
+}
+#activity-wall #postFormItem span#loader img {
+	display: inline-block;
+	float: left;
+	padding: 4px 15px 0 0;
+}
+
+/* --- Post Registration Facebook Share Overlay ---  */
+#fbShareRegBox #fb-profile-photo{
+	float: left;
+	margin: 0 10px 0 0;
+}
+#fbShareRegBox textarea{
+	width: 500px;
+	height: 38px;
+	margin: 0 0 10px 0;
+}
+#fbShareRegBox #wallMessagePreview{
+	margin: 0 0 10px 60px;
+	color: #484848;
+	font-size: 12px;
+}
+#fbShareRegBox #wallMessagePreview p{margin-bottom: 5px;}
+#fbShareRegBox #wallMessagePreview span.label{
+	color: #888;
+	font-weight: bold;
+}
+#fbShareRegBox #form-buttons{
+	float: right;
+	margin: 0 0 10px 0;
+}
+
+/*------------------------------------------------------------------------------------
+Custom SBS styles
+------------------------------------------------------------------------------------*/
+.sponsor {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+.sponsor .sponsor-image {
+  width: 200px;
+  float: left;
+  display: block;
+}
+.sponsor .sponsor-image img {
+  margin: 0 auto;
+}
+.sponsor .sponsor-blurb {
+  width: 500px;
+  float: left;
+  padding: 40px 0 0 20px;
+}
+
+/*------------------------------------------------------------------------------------
+SBS Custom Homepage Sprites
+------------------------------------------------------------------------------------*/
+.feature-image-banner {
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+.feature-image-banner a.feature {
+  cursor: pointer;
+  height: 208px;
+  width: 300px;
+  display: block;
+  float: left;
+}
+.feature-image-banner a.feature.sports {
+  background: url('http://resources.socialbostonsports.com/img/home-info.jpg') no-repeat top left;
+}
+.feature-image-banner a.feature.sports:hover {
+  background: url('http://resources.socialbostonsports.com/img/home-info.jpg') no-repeat bottom left;
+}
+.feature-image-banner a.feature.social {
+  background: url('http://resources.socialbostonsports.com/img/home-info.jpg') no-repeat top center;
+  margin: 0 10px;
+}
+.feature-image-banner a.feature.social:hover {
+  background: url('http://resources.socialbostonsports.com/img/home-info.jpg') no-repeat bottom center;
+}
+.feature-image-banner a.feature.adventure {
+  background: url('http://resources.socialbostonsports.com/img/home-info.jpg') no-repeat top right;
+}
+.feature-image-banner a.feature.adventure:hover {
+  background: url('http://resources.socialbostonsports.com/img/home-info.jpg') no-repeat bottom right;
+}
+
+/*------------------------------------------------------------------------------------
+Table Styles
+------------------------------------------------------------------------------------*/
+.datagrid table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 720px;
+}
+.datagrid {
+  font: normal 12px/150% Arial, Helvetica, sans-serif;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #006699;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width:720px;
+}
+.datagrid table td, .datagrid table th {
+  padding: 6px 10px;
+}
+.datagrid table thead th {
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );
+  background: -moz-linear-gradient( center top, #006699 5%, #00557F 100% );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');
+  background-color: #006699;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: bold;
+  border-left: 1px solid #0070A8;
+}
+.datagrid table thead th:first-child {
+  border: none;
+}
+.datagrid table tbody td {
+  color: #333;
+  border-left: 1px solid #E1EEF4;
+  font-size: 12px;
+  font-weight: normal;
+}
+.datagrid table tbody .alt td {
+  background: #E1EEf4;
+  color: #333;
+}
+.datagrid table tbody td:first-child {
+  border: none;
+}
+
+/*------------------------------------------------------------------------------------
+Facebook Login Corrections
+------------------------------------------------------------------------------------*/
+.main .fb-connect {
+  background-color: #647AB2;
+  margin: 0 0 25px 0;
+  padding: 0;
+  border-bottom: 1px solid #294283;
+  float: left;
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+}
+.main .fb-connect #message p {
+  margin-left: 18px;
+}
+.main .fb-connect .cursive {
+  display: none;
+}
+
+/*------------------------------------------------------------------------------------
+Homepage Styles
+------------------------------------------------------------------------------------*/
+/*Activity Wall Width Adjustment - DO NOT MODIFY*/
+#activity-wall {width: 600px !important;}
+
+/*Multi-Image Banner*/
+.feature-image-banner img{margin-right: 6px;}
+.feature-image-banner img:last-child{margin-right: 0;}
+
+/*Right Rail*/
+.home-template-aside{display: block; float: right; width: 260px; background-color: #EEE; padding: 10px 20px 20px; margin: 0 0 10px 7px;}
+.home-template-aside h4{padding:0;margin:0 0 5px 0;font-size: 14px;}
+.home-template-aside .social{list-style: none; display: inline;}
+.home-template-aside .social a li{background: transparent url("http://svite-league-apps-content.s3.amazonaws.com/templates/site-template-social-icons.png") 0 0 no-repeat; width: 32px; height: 32px; display: inline-block;padding:0;margin:0 5px 0 0; text-indent: -9999px;}
+.home-template-aside .social a li.facebook{background-position: 0 -33px;}
+.home-template-aside .social a li.youtube{background-position: 0 -66px;}
+.home-template-aside .social a li.flickr{background-position: 0 -99px;}
+
+/*CTA Button Styles*/
+.btn.large-cta {padding: 5px 45px;font-size: 20px;font-weight: 400;text-transform: uppercase;}

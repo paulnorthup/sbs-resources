@@ -1,0 +1,154 @@
+/*
+Custom SBS styles
+*/
+
+/*------------------------------------------------------------------------------------
+Default Overrides
+------------------------------------------------------------------------------------*/
+/* Globals */
+body {
+	background: #6f727a;
+	margin: 0;
+	padding: 0;
+ }
+.btn {
+  background: #ca1e1e url(/_i/_site2.0/btn-glass.png) 0 center repeat-x;
+}
+.btn:hover {
+  background-color: #b01a1a;
+}
+
+/* Header */
+#header {
+  background-color: #48A9E4;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0779BF), to(#48A9E4));
+  background-image: -moz-linear-gradient(-90deg, #0779BF, #48A9E4);
+}
+#header .wrap {
+  background: none;
+	position: normal;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+#account-nav {
+  right: 20px;
+  top:4px;
+}
+
+/* Main Nav */
+#nav {
+  background: #212121;
+}
+
+/* Content & module framework */
+#content {
+  background: #efefef;
+}
+#content .wrap {
+  background: #fff;
+}
+
+/* Footer */
+#footer {
+  background: #efefef
+}
+#footer .wrap {
+  background: #e3e3e3;
+}
+.basic-form li label.auto-label {
+  display: none;
+}
+ 
+ 
+/*------------------------------------------------------------------------------------
+ Sponsor Page Styles
+------------------------------------------------------------------------------------*/  
+.sponsor {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #ccc;
+}
+.sponsor .sponsor-image {
+  width: 200px;
+  float: left;
+  display: block;
+}
+.sponsor .sponsor-image img {
+  margin: 0 auto;
+}
+.sponsor .sponsor-blurb {
+  width: 500px;
+  float: left;
+  padding: 40px 0 0 20px;
+}
+
+/*------------------------------------------------------------------------------------
+Table Styles
+------------------------------------------------------------------------------------*/
+.datagrid table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 720px;
+}
+.datagrid {
+  font: normal 12px/150% Arial, Helvetica, sans-serif;
+  background: #fff;
+  overflow: hidden;
+  border: 1px solid #006699;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  width:720px;
+}
+.datagrid table td, .datagrid table th {
+  padding: 6px 10px;
+}
+.datagrid table thead th {
+  background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #006699), color-stop(1, #00557F) );
+  background: -moz-linear-gradient( center top, #006699 5%, #00557F 100% );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#006699', endColorstr='#00557F');
+  background-color: #006699;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: bold;
+  border-left: 1px solid #0070A8;
+}
+.datagrid table thead th:first-child {
+  border: none;
+}
+.datagrid table tbody td {
+  color: #333;
+  border-left: 1px solid #E1EEF4;
+  font-size: 12px;
+  font-weight: normal;
+}
+.datagrid table tbody .alt td {
+  background: #E1EEf4;
+  color: #333;
+}
+.datagrid table tbody td:first-child {
+  border: none;
+}
+
+/*------------------------------------------------------------------------------------
+Facebook Login Corrections
+------------------------------------------------------------------------------------*/
+.main .fb-connect {
+  background-color: #647AB2;
+  margin: 0 0 25px 0;
+  padding: 0;
+  border-bottom: 1px solid #294283;
+  float: left;
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+}
+.main .fb-connect #message p {
+  margin-left: 18px;
+}
+.main .fb-connect .cursive {
+  display: none;
+}

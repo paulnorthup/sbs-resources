@@ -1,4 +1,0 @@
-sbs-resources
-=============
-
-resources
